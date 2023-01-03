@@ -1,12 +1,15 @@
 const express = require('express');
 const auth = require('./routes/auth');
 const app = express();
-const port = 3000;
+require('dotenv').config();
+const port = 8000;
 
+app.use(express.json());
 app.use('/auth', auth);
+app.use('/post', auth);
 
-app.get('/', (req,res) => {
-    res.send('success');
+app.get('/', async (req,res) => {
+   await res.send('success');
 })
 
 app.listen(port, () => {
