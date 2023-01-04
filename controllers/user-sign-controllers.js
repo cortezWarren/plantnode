@@ -40,7 +40,7 @@ const UserSignControllers = {
 
       const token = jwt.sign({
         email
-      }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 36000000});
+      }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600000});
 
       users.push({
         email,
